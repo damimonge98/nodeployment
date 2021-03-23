@@ -1,0 +1,40 @@
+# Get all job offers
+GET http://localhost:5000/empleos
+
+###
+
+# Get one job offer
+GET http://localhost:5000/empleos/6021a06fd476b22a30571ee7
+
+###
+
+# Create job offer (company id)
+
+POST http://localhost:5000/empleos/60219fb7aa7ad646e4a3ab95
+Content-Type: application/json
+
+{
+  "title": "Front-End Developer",
+  "description": "Conocimientos particulares en React y generales en JavaScript",
+  "location": "Andorra",
+  "linkedIn": "http://linkedin.com"
+}
+
+###
+
+# Update job offer
+
+PATCH http://localhost:5000/empleos/6021a09ed476b22a30571ee9
+Content-Type: application/json
+
+{
+  "title": "Back-End Developer"
+}
+
+###
+
+# Delete job offer
+
+DELETE http://localhost:5000/empleos/6021a06fd476b22a30571ee7
+
+###

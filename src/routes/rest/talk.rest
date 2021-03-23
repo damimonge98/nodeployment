@@ -1,0 +1,45 @@
+# Get all talks
+
+GET http://localhost:5000/talk
+
+###
+
+# Get one talk
+
+GET http://localhost:5000/talk/6019a0156011a30f70690e0e
+
+###
+
+# Create one talk
+
+POST http://localhost:5000/talk
+Content-Type: application/json
+
+{
+  "title": "Desarrollo: un mundo de oportunidades",
+  "imagen": "https://files.slack.com/files-pri/TPRS7H4PN-F01L8DB5KU5/henry-talk-01.jpg",
+  "description": "Vamos a charlar con Gabriel Benmergui, Senior web Engineer de Robinhood, una de las Fintech más HOT de Silicon Valley :fire::fire::fire:",
+  "url": "https://us02web.zoom.us/j/89364743130"
+}
+
+###
+
+# Update one talk
+
+PATCH http://localhost:5000/talk/6019a0156011a30f70690e0e
+Content-Type: application/json
+
+{
+  "title": "Modulo 2",
+  "imagen": "(L)",
+  "description": "Javascript retrasado",
+  "url": " "
+}
+
+###
+
+# Delete one talk
+
+DELETE  http://localhost:5000/talk/6019eaed0a1cc80cbc8fd49b
+
+###

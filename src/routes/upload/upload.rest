@@ -1,0 +1,20 @@
+# Upload Users with csv
+POST http://localhost:5000/upload/users
+Content-Type: multipart/form-data; boundary=WebKitFormBoundary7MA4YWxkTrZu0gW
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="users"; filename="users-test.csv"
+Content-Type: text/csv
+
+Hola
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+###
+
+POST http://localhost:5000/upload/users
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="users"; filename="users-test.csv"
+Content-Type: text/csv
+
+< ./users-test.csv
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

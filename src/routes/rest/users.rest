@@ -1,0 +1,25 @@
+# Get all users
+GET http://localhost:5000/users
+
+###
+
+# Get one user (id)
+GET http://localhost:5000/users/60234bee88023325690f284d
+
+###
+
+# Update one user (id)
+PATCH http://localhost:5000/users/user/6023ea1bd0ba05eb2c422fe4
+Content-Type: application/json
+
+{
+  "role": "instructor",
+  "isSuperAdmin": true
+}
+
+###
+
+# Delete one user (id)
+DELETE http://localhost:5000/users/6023505f75f04d2a26295a04
+
+###

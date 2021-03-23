@@ -1,0 +1,55 @@
+# Register user
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Bill",
+  "lastName": "Gates",
+  "password": "Hola1234",
+  "email": "billgates@outlook.com"
+}
+
+###
+
+# Login user
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "billgates@outlook.com",
+  "password": "Hola1234"
+}
+
+###
+
+# Auto-login user
+
+GET http://localhost:5000/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc1N1cGVyQWRtaW4iOmZhbHNlLCJyb2xlIjoiZ3Vlc3QiLCJfaWQiOiI2MDEwNWRlZGRkYzUwNDFmZmE2NmEwNjEiLCJlbWFpbCI6ImhpQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkNodXN0byIsImxhc3ROYW1lIjoiSGkiLCJfX3YiOjB9.ija0btonkpP2ozboMszeA61-8q7RljZbs5BzODW4q_4
+
+###
+
+# Register company
+
+POST http://localhost:5000/auth/register-company/
+Content-Type: application/json
+
+{
+  "companyName": "Microsoft",
+  "email": "microsoft@outlook.com",
+  "password": "Hola1234"
+}
+
+###
+
+# Login company
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "google@gmail.com",
+  "password": "Hola1234"
+}

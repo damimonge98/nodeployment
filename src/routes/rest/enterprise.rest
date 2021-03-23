@@ -1,0 +1,27 @@
+# Get all companies
+
+GET http://localhost:5000/enterprise
+
+###
+
+# Get one company
+GET http://localhost:5000/enterprise/60219fb7aa7ad646e4a3ab95
+
+###
+
+# Update company
+
+PATCH http://localhost:5000/enterprise/6021adef53d2aa0870e20227
+Content-Type: application/json
+
+{
+  "name": "Gosogle"
+}
+
+###
+
+# Delete company
+
+DELETE http://localhost:5000/enterprise/60221839b0db490f30ab0238
+
+###
