@@ -118,9 +118,8 @@ server.use((err, req, res, next) => {
   res.status(status).send(message);
 });
 
-const host = process.env.HOST || "0.0.0.0";
 const port = process.env.PORT || 5000;
 
-server.listen(port,host, () => {
+server.listen(port, () => {
   console.log("  🚀 Server running on port", port);
 });
