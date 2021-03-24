@@ -70,7 +70,7 @@ server.use(express.urlencoded({ extended: true, limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use(cors({
-  origin: '*', // Client
+  origin: 'https://henry-app21.herokuapp.com', // Client
   credentials: true
 }));
 server.use((req, res, next) => {
