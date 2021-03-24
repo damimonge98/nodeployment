@@ -32,11 +32,8 @@ const enterprise = require('./src/routes/enterprise.js');
 
 const server = express();
 
-const MongoClient = require("mongodb").MongoClient;
- const client = await new MongoClient(DATABASE_URL,{ useNewUrlParser: true});
- client.connect();
-mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
-mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err); }); 
+mongoose.Promise = global.Promise;
+mongoose.connect(DATABASE_URL, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
