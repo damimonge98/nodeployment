@@ -60,7 +60,7 @@ passport.use(
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/google/callback"
+  callbackURL: "https://henry-app21.herokuapp.com/auth/google/callback"
 },
   async (accessToken, refreshToken, profile, cb) => {
     try {
@@ -104,7 +104,7 @@ passport.use(
 passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/github/callback",
+  callbackURL: "https://henry-app21.herokuapp.com/auth/github/callback",
   scope: ['user:email']
 },
   async (accessToken, refreshToken, profile, done) => {

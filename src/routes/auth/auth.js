@@ -104,7 +104,7 @@ router.get('/google/callback', passport.authenticate('google'), async (req, res)
   // Successful authentication, redirect to client.
   const user = await User.findOne({ googleId: req.user.id });
   const token = jwt.sign(JSON.stringify(user), JWT_SECRET);
-  return res.redirect(`http://localhost:3000/oauth/${token}`);
+  return res.redirect(`https://henry-app-sage.vercel.app/oauth/${token}`);
 });
 
 router.get('/github',
@@ -116,7 +116,7 @@ router.get('/github/callback',
     // Successful authentication, redirect home.
     const user = await User.findOne({ githubId: req.user.id });
     const token = jwt.sign(JSON.stringify(user), JWT_SECRET);
-    res.redirect(`http://localhost:3000/oauth/${token}`);
+    res.redirect(`https://henry-app-sage.vercel.app/oauth/${token}`);
   });
 
 module.exports = router;
