@@ -73,6 +73,7 @@ server.use(cors({
   origin: 'https://henry-app21.herokuapp.com', // Client
   credentials: true
 }));
+server.use(cors())
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -84,10 +85,7 @@ server.use((req, res, next) => {
     next();
 }
 });
-server.options('*', cors({
-  origin: true,
-  credentials: true
-}));
+server.options('*', cors());
 
 server.use(passport.initialize());
 require("./src/passport");
