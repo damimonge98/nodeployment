@@ -84,10 +84,10 @@ server.use((req, res, next) => {
     next();
 }
 });
-server.options('*', cors,{
+server.options('*', cors({
   origin: true,
   credentials: true
-});
+}));
 
 server.use(passport.initialize());
 require("./src/passport");
