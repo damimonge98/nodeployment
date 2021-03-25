@@ -70,7 +70,7 @@ server.use(express.urlencoded({ extended: true, limit: "50mb" }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use(cors({
-  origin: 'https://henry-app21.herokuapp.com', // Client
+  origin: "https://henry-app-sage.vercel.app", // Client
   credentials: true
 }));
 server.use(cors())
@@ -79,13 +79,15 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Authorization, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'POST, PUT, GET, DELETE, OPTIONS');
+  res.header("Access-Control-Max-Age","1728000");
   if ('OPTIONS' == req.method) {
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+    res.header("Access-Control-Max-Age","1728000");
     return res.sendStatus(200);
 } else {
     next();
 }
 });
-server.options('*', cors());
 
 server.use(passport.initialize());
 require("./src/passport");
